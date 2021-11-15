@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Blog{% endblock %}
+
+{% block body %}
+<h1>Mes articles de blog</h1>
+    <h2>BLOGGG</h2>
+
+    <img src="{{ asset('public/logo.png') }}" alt="Symfony!"/>
+
+    <div>
+        <main>
+
+        </main>
+
+        <aside>
+            {% include './includes/sidebar.html.twig' %}
+        </aside>
+    </div>
+{% endblock %}
