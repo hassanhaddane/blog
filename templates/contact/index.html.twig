@@ -9,6 +9,14 @@
                 Bonjour {{ name }}
             </h1>
         {% endif %}
+        {{ dump(contacts)}}
+
+        <ul>
+            {% for contact in contacts %}
+            <li>La personne <strong> {{ contact.name }} </strong></li>
+            {% endfor %}
+        </ul>
+
 
         {% if city is defined and city is not empty %}
             <p>
