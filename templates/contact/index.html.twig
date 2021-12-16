@@ -1,31 +1,38 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Contact{% endblock %}
-
-{% block body %}
-    <div>
-        {% if name is defined %}
-            <h1>
-                Bonjour {{ name }}
-            </h1>
-        {% endif %}
-        {{ dump(contacts)}}
-
-        <ul>
-            {% for contact in contacts %}
-            <li>La personne <strong> {{ contact.name }} </strong></li>
-            {% endfor %}
-        </ul>
-
-
-        {% if city is defined and city is not empty %}
-            <p>
-                Vous êtes sur la ville de {{ city }}
-            </p>
-        {% endif %}
-    </div>
+{% block title %}Contact
 {% endblock %}
 
-{% block stylesheets %}
-    {{ encore_entry_link_tags('contact') }}
+{% block body %}
+    <h1>Contact</h1>
+    {# {{dump(contacts)}} #}
+
+    <table>
+        <tbody></tbody>
+    </table>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">FirstName</th>
+            <th scope="col">Newsletter</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for contact in contacts %}
+            <tr>
+                <td>
+                    {{contact.name}}
+                </td>
+                <td>
+                    {{contact.firstname}}
+                </td>
+                <td>
+                    {{contact.newsletter}}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}

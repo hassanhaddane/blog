@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\ContactRepository;
+use App\Repository\TPContactRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=ContactRepository::class)
+ * @ORM\Entity(repositoryClass=TPContactRepository::class)
  */
-class Contact
+class TpContact
 {
     /**
      * @ORM\Id
@@ -26,6 +26,11 @@ class Contact
      * @ORM\Column(type="string", length=255)
      */
     private $firstname;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $age;
 
     /**
      * @ORM\Column(type="boolean")
@@ -57,6 +62,18 @@ class Contact
     public function setFirstname(string $firstname): self
     {
         $this->firstname = $firstname;
+
+        return $this;
+    }
+
+    public function getAge(): ?int
+    {
+        return $this->age;
+    }
+
+    public function setAge(int $age): self
+    {
+        $this->age = $age;
 
         return $this;
     }
